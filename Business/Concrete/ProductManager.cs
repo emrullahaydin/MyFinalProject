@@ -21,9 +21,8 @@ namespace Business.Concrete
 
         public IDataResult<List<Product>> GetAll()
         {
-            //iş kodları varsa yazıyoruz....
-            // yetkisi var mı?
-            if (DateTime.Now.Hour==22)
+           // iş kodları varsa yazıyoruz....yetkisi var mı?
+            if (DateTime.Now.Hour == 1)
             {
                 return new ErrorDataResult<List<Product>>(Messages.MainternanceTime);
             }
