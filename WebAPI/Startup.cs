@@ -33,8 +33,8 @@ namespace WebAPI
             //AOP yapýlacak ilerde : Bir methonun önünde sonunda hata verdiðinde çalýþan kod parçaçýklarýný AOP yazýyoruz. Autofac En iyisi
             services.AddControllers();
             //Arka planda bizim için New leme iþlemi yapýyor. - Ýçerisinde data tutulmuyorsa kullanýyoruz.
-            services.AddSingleton<IProductService, ProductManager>();
-            services.AddSingleton<IProductDal, EfProductDal>();
+            //services.AddSingleton<IProductService, ProductManager>();
+            //services.AddSingleton<IProductDal, EfProductDal>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
