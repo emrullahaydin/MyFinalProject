@@ -1,4 +1,5 @@
 ﻿using Castle.DynamicProxy;
+using Core.CrossCuttingConcerns.Logging.Log4Net.Loggers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +17,7 @@ namespace Core.Utilities.Interceptors
             var methodAttributes = type.GetMethod(method.Name)
                 .GetCustomAttributes<MethodInterceptionBaseAttribute>(true);
             classAttributes.AddRange(methodAttributes);
-          //  classAttributes.Add(new ExceptionLogAspect(typeof(FileLogger)));   şu an hazır değil loglama alt yapısı
+            //classAttributes.Add(new ExceptionLogAspect(typeof(FileLogger)));  // şu an hazır değil loglama alt yapısı
 
             return classAttributes.OrderBy(x => x.Priority).ToArray();
         }
